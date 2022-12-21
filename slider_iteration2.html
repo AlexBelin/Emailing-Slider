@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .slider-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .slide {
+            display: none;
+        }
+
+        .slide img {
+            width: 100%;
+            height: auto;
+        }
+
+        .nav-dot {
+            display: none;
+        }
+
+        .slider-content {
+            width: 100%;
+        }
+
+        #dot1:checked ~ .slider-content .slide:nth-child(1) {
+            display: block;
+        }
+
+        #dot2:checked ~ .slider-content .slide:nth-child(2) {
+            display: block;
+        }
+
+        #dot3:checked ~ .slider-content .slide:nth-child(3) {
+            display: block;
+        }
+
+        @media only screen and (-webkit-min-device-pixel-ratio: 0) {
+            .slide-fallback {
+                display: none !important;
+            }
+
+            .slider-wrapper {
+                display: block !important;
+                max-height: none !important;
+                display: block !important;
+                visibility: visible !important;
+                height: auto !important;
+                line-height: unset !important;
+            }
+        }
+
+        [data-ogsc] .slider-wrapper, .slider-wrapper\0, .olm-fragment-custom .slider-wrapper, [class~="x_slider-wrapper"] {
+            display: none !important;
+            overflow: hidden !important;
+            max-height: 0 !important;
+            line-height: 0 !important;
+            visibility: hidden !important;
+        }
+        [data-ogsc] .slide-fallback, .slide-fallback\0, .olm-fragment-custom .slide-fallback, [class~="x_slide-fallback"] {
+            display: block !important;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="%%view_email_url%%">Mirror link</a>
+    <table cellpadding="0" cellspacing="0" border="0" width="400">
+        <tr>
+            <td>
+                <!--[if !mso]><!-->
+                <div class="slider-wrapper" style="mso-hide: all; overflow: hidden; max-height: 0; display: none; line-height: 0; visibility: hidden;">
+                    <input type="radio" checked class="nav-dot" name="nav-dot" id="dot1">
+                    <input type="radio" class="nav-dot" name="nav-dot" id="dot2">
+                    <input type="radio" class="nav-dot" name="nav-dot" id="dot3">
+                    <div class="slider-content">
+                        <div class="slide">
+                            <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8bGFuZHNjYXBlfGVufDB8fDB8fA%3D%3D&w=1000&q=80" border="0">
+                        </div>
+                        <div class="slide">
+                            <img src="https://media.istockphoto.com/id/583809524/fr/photo/nature-sauvage-de-lalberta-pr%C3%A8s-de-banff.jpg?s=612x612&w=0&k=20&c=-YnwdSynU73t_HrvS5M16o7K2PZGQ-WLlEoojF35su8=" border="0">
+                        </div>
+                        <div class="slide">
+                            <img src="https://images.unsplash.com/photo-1484591974057-265bb767ef71?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MXx8fGVufDB8fHx8&w=1000&q=80" border="0">
+                        </div>
+                    </div>
+                    <div class="slider-dot-nav">
+                        <label for="dot1">slide1</label>
+                        <label for="dot2">slide2</label>
+                        <label for="dot3">slide3</label>
+                    </div>
+                </div>
+                <!--<![endif]-->
+                <div class="slide-fallback">
+                    <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8bGFuZHNjYXBlfGVufDB8fDB8fA%3D%3D&w=1000&q=80" border="0" width="400">
+                </div>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

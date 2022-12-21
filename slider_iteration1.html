@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <style type="text/css">
+        .carousel {
+            position: relative;
+            left: 0;
+        }
+
+        .carousel a{
+            position:absolute;
+            top:0px;
+            left:0px;
+            -webkit-animation: car-anim 9s linear infinite;
+        }
+
+        .carousel a img{
+            width: 100%;
+        }
+
+        .carousel a:nth-child(1){
+            -webkit-animation-delay: 0s;    
+        }
+        .carousel a:nth-child(2){
+            -webkit-animation-delay: 3s;    
+        }
+        .carousel a:nth-child(3){
+            -webkit-animation-delay: 6s;    
+        }
+
+          /* Fade  */
+        .carousel.fade a{
+            position:absolute;
+            top:0px;
+            left:0px; 
+            -webkit-animation: car-anim 9s linear infinite;    
+        }
+
+        .carousel.fade a:nth-child(1){
+            position:relative;
+            -webkit-animation-delay: -10s;    
+        }
+        .carousel.fade a:nth-child(2){
+            -webkit-animation-delay: -7s;    
+        }
+        .carousel.fade a:nth-child(3){
+            -webkit-animation-delay: -4s;    
+        }
+
+        
+  @-webkit-keyframes car-anim
+    {
+        /* start fade in */
+        0%{
+            z-index:2;
+            opacity:0;
+        }
+        /* end fade in */
+        5%{
+            opacity:1;
+        }
+        33%{
+            z-index:2;
+        }
+        /* lower z-index - allow next image to fade in */
+        33.1%{
+            z-index:1;
+        }
+        /* already obscured */
+        38%{
+            opacity:1;
+        }
+        /* hide */
+        38.1%{
+            opacity:0;
+        }
+        100%{
+            z-index:1;
+            opacity:0;
+        }
+    }
+    </style>
+    <style>
+        @media screen and (-webkit-min-device-pixel-ratio: 0) {
+            .fallback{
+                display:none;
+            }
+          .carousel{
+            display:block !important;
+            max-height:none !important;
+            position:relative;
+          }
+        }
+    </style>
+</head>
+<body>
+    <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+            <td>
+                <a href="%%view_email_url%%">Mirror link</a>
+                <!--[if !mso]><!-->
+                <div class="carousel" style="position:relative;width:500px;">
+                    <a href="https://www.google.com/search?q=castles">
+                        <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8bGFuZHNjYXBlfGVufDB8fDB8fA%3D%3D&w=1000&q=80" border="0">
+                    </a>
+                    <a href="https://www.google.com/search?q=meadows">
+                        <img src="https://media.istockphoto.com/id/583809524/fr/photo/nature-sauvage-de-lalberta-pr%C3%A8s-de-banff.jpg?s=612x612&w=0&k=20&c=-YnwdSynU73t_HrvS5M16o7K2PZGQ-WLlEoojF35su8=" border="0">
+                    </a>
+                    <a href="https://www.google.com/search?q=coast">
+                        <img src="https://images.unsplash.com/photo-1484591974057-265bb767ef71?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MXx8fGVufDB8fHx8&w=1000&q=80" border="0">
+                    </a>
+                </div>
+                <!--<![endif]-->
+                <div class="fallback" style="display:none">
+                    <a href="https://www.google.com/search?q=castles">
+                        <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8bGFuZHNjYXBlfGVufDB8fDB8fA%3D%3D&w=1000&q=80" border="0">
+                    </a>
+                </div>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
